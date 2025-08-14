@@ -1,9 +1,8 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { AppHeader } from './components/app-header'
 import { SmoothScroll } from './components/smooth-scroll'
-import { Analytics } from '@vercel/analytics/next'
 import { AppFooter } from './components/app-footer'
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -23,15 +22,18 @@ export const metadata: Metadata = {
         shortcut: '/assets/images/avatar.jpg',
         apple: '/assets/images/avatar.jpg',
     },
-    themeColor: [
-        { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-        { media: '(prefers-color-scheme: dark)', color: '#020617' },
-    ],
     appleWebApp: {
         capable: true,
         statusBarStyle: 'black-translucent',
         title: 'Nguyen Vo My Linh',
     },
+}
+
+export const viewport: Viewport = {
+    themeColor: [
+        { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+        { media: '(prefers-color-scheme: dark)', color: '#020617' },
+    ],
 }
 
 export default function RootLayout({
@@ -56,11 +58,10 @@ export default function RootLayout({
                     <SmoothScroll />
                     <AppHeader />
 
-                    <div className="mt-0 md:mt-24">{children}</div>
+                    <div className="mt-0 md:mt-24 pb-10">{children}</div>
                     <AppFooter />
                 </main>
             </body>
-            <Analytics />
         </html>
     )
 }

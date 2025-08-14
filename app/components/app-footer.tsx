@@ -4,7 +4,7 @@ import { Github, Linkedin, MessageCircle, Mail, Facebook, Instagram } from 'luci
 export const AppFooter = () => {
     const year = new Date().getFullYear()
     return (
-        <footer className="mx-auto max-w-6xl px-6 py-8 md:py-10">
+        <footer className="mx-auto max-w-6xl px-6 py-8 md:py-10 mb-16">
             <div className="flex items-center justify-between gap-4 text-xs text-muted-foreground">
                 <div className="flex flex-wrap items-center gap-1">
                     <span>© {year} /</span>
