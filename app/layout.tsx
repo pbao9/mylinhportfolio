@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { AppHeader } from './components/app-header'
 import { SmoothScroll } from './components/smooth-scroll'
-
+import { Analytics } from '@vercel/analytics/next'
 const geistSans = Geist({
     variable: '--font-geist-sans',
     subsets: ['latin'],
@@ -49,6 +49,7 @@ export default function RootLayout({
                     <div className="mt-20">{children}</div>
                 </main>
             </body>
+            <Analytics />
         </html>
     )
 }
