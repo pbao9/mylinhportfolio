@@ -34,16 +34,17 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                <main className="min-h-screen font-sans">
-                    <SmoothScroll />
-                    <AppHeader />
-                    <div
-                        className="
-    pointer-events-none absolute inset-0 -z-10
+                {' '}
+                <div
+                    className="
+    pointer-events-none fixed inset-0 -z-10 fade-bottom-mask
     bg-[radial-gradient(2000px_1000px_at_50%_0%,rgba(186,230,253,0.6)_0%,rgba(255,255,255,1)_70%)]
     dark:bg-[radial-gradient(2000px_1000px_at_50%_0%,rgba(56,189,248,0.3)_0%,rgba(2,6,23,1)_85%)]
   "
-                    />
+                />
+                <main className="min-h-screen font-sans">
+                    <SmoothScroll />
+                    <AppHeader />
 
                     <div className="mt-20">{children}</div>
                 </main>
