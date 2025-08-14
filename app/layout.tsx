@@ -46,7 +46,7 @@ export default function RootLayout({
                     <SmoothScroll />
                     <AppHeader />
 
-                    <div className="mt-20">{children}</div>
+                    <div className="mt-0 md:mt-24">{children}</div>
                 </main>
             </body>
             <Analytics />
