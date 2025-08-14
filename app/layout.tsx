@@ -4,6 +4,7 @@ import './globals.css'
 import { AppHeader } from './components/app-header'
 import { SmoothScroll } from './components/smooth-scroll'
 import { Analytics } from '@vercel/analytics/next'
+import { AppFooter } from './components/app-footer'
 const geistSans = Geist({
     variable: '--font-geist-sans',
     subsets: ['latin'],
@@ -21,6 +22,15 @@ export const metadata: Metadata = {
         icon: '/assets/images/avatar.jpg',
         shortcut: '/assets/images/avatar.jpg',
         apple: '/assets/images/avatar.jpg',
+    },
+    themeColor: [
+        { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+        { media: '(prefers-color-scheme: dark)', color: '#020617' },
+    ],
+    appleWebApp: {
+        capable: true,
+        statusBarStyle: 'black-translucent',
+        title: 'Nguyen Vo My Linh',
     },
 }
 
@@ -47,6 +57,7 @@ export default function RootLayout({
                     <AppHeader />
 
                     <div className="mt-0 md:mt-24">{children}</div>
+                    <AppFooter />
                 </main>
             </body>
             <Analytics />
